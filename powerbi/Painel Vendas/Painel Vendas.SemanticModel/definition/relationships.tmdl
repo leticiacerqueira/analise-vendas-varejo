@@ -1,0 +1,31 @@
+relationship 63724271-35d0-536d-bd6d-7570b6dfeea0
+	fromColumn: fato_vendas.data
+	toColumn: dCalendario.Data
+
+relationship c38cb29f-4f4f-5afd-b9ea-ca268e9b66e2
+	fromColumn: fato_devolucoes.data
+	toColumn: dCalendario.Data
+
+relationship eddd1093-f3af-53ec-a49d-54aac3bb4424
+	fromColumn: dim_meta.data
+	toColumn: dCalendario.Data
+
+relationship b781db32-c5d7-5909-99b5-8b57d4f7a369
+	fromColumn: fato_vendas.sku
+	toColumn: dim_produto.sku
+
+relationship 69b1341d-de02-50fb-b13b-0faa3d796519
+	fromColumn: fato_devolucoes.sku
+	toColumn: dim_produto.sku
+
+relationship e4997642-792b-510b-a5b7-ca560c156d47
+	fromColumn: fato_vendas.loja
+	toColumn: dim_loja.loja
+
+relationship 3de6e468-0df5-5cb6-862e-648e4fc38d88
+	fromColumn: fato_devolucoes.loja
+	toColumn: dim_loja.loja
+
+relationship 62182990-2194-5fd5-9271-351e0ec44280
+	fromColumn: dim_meta.loja
+	toColumn: dim_loja.loja

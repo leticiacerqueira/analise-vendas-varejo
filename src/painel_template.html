@@ -1,0 +1,165 @@
+<title>Painel de vendas e margem</title>
+<style>
+:root{
+  --bg:#f7f2ec; --surface:#fffdfa; --fg:#2b1d14; --muted:#6e5a4b; --line:#e6dace;
+  --accent:#c2560f; --accent-soft:#fbe6d6; --brown:#7a4a2a; --bar:#c9a98f; --grid:#efe6dc; --good:#3f7d4e;
+  --f:"IBM Plex Sans","Segoe UI",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1a130f; --surface:#231a15; --fg:#f1e7df; --muted:#b9a596; --line:#3a2c23;
+  --accent:#f08a3c; --accent-soft:#3a2416; --brown:#d9a066; --bar:#6b5345; --grid:#2e231c; --good:#7cc08d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1a130f; --surface:#231a15; --fg:#f1e7df; --muted:#b9a596; --line:#3a2c23;
+  --accent:#f08a3c; --accent-soft:#3a2416; --brown:#d9a066; --bar:#6b5345; --grid:#2e231c; --good:#7cc08d; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 var(--f)}
+.pn{max-width:1180px;margin:0 auto;padding:16px;display:grid;gap:14px}
+header{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:end;justify-content:space-between}
+h1{font-size:1.25rem;margin:0}
+.sub{color:var(--muted);font-size:.85rem}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface)}
+.seg button{all:unset;cursor:pointer;padding:6px 10px;font-size:.82rem;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.seg button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+select{font:inherit;font-size:.85rem;padding:5px 8px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--fg)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:grid;gap:2px}
+.kpi span{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.kpi b{font-size:1.45rem;font-variant-numeric:tabular-nums}
+.kpi small{font-size:.78rem;color:var(--muted)}
+.kpi small.bad{color:var(--accent)} .kpi small.ok{color:var(--good)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px;display:grid;gap:6px;min-width:0}
+.card h2{font-size:.95rem;margin:0}
+.card p{margin:0;color:var(--muted);font-size:.8rem}
+svg{width:100%;height:auto;display:block;overflow:visible}
+svg text{fill:var(--muted);font:11px var(--f)}
+.axis line{stroke:var(--grid)}
+.tip{position:fixed;pointer-events:none;background:var(--fg);color:var(--bg);padding:6px 8px;border-radius:5px;font-size:.78rem;line-height:1.35;opacity:0;transition:opacity .1s;z-index:9;max-width:240px}
+table{width:100%;border-collapse:collapse;font-size:.82rem;font-variant-numeric:tabular-nums}
+td,th{padding:5px 4px;border-bottom:1px solid var(--line);text-align:right}
+td:first-child,th:first-child{text-align:left}
+th{color:var(--muted);font-weight:500}
+.barcell{display:inline-block;height:8px;border-radius:2px;background:var(--bar);vertical-align:middle;margin-right:6px}
+.legend{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.78rem;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:3px;border-radius:2px;margin-right:4px;vertical-align:middle}
+footer{color:var(--muted);font-size:.75rem}
+</style>
+<div class="pn">
+  <header>
+    <div><h1>Vendas e margem · rede de lojas de artigos para casa</h1>
+      <div class="sub">Dados simulados · 7 lojas no Grande Rio + e-commerce · jan/2024 a out/2026</div></div>
+    <div class="filters">
+      <div class="seg" id="per" role="group" aria-label="Período">
+        <button data-p="2024">2024</button><button data-p="2025">2025</button><button data-p="2026" aria-pressed="true">2026 (jan–out)</button><button data-p="all">Tudo</button>
+      </div>
+      <select id="loja" aria-label="Loja"></select>
+    </div>
+  </header>
+  <div class="kpis" id="kpis"></div>
+  <div class="grid">
+    <div class="card"><h2>Receita e margem bruta por mês</h2><p>Barras: receita líquida. Linha: margem bruta %. O período selecionado fica destacado.</p><svg id="c1"></svg></div>
+    <div class="card"><h2>Margem bruta por loja</h2><p>Clique numa loja para filtrar o painel. Laranja: margem 3 p.p. ou mais abaixo da média.</p><svg id="c2"></svg></div>
+    <div class="card"><h2>Desconto acima da política, por mês</h2><p>Valor concedido além do teto de 15% (ou do teto da campanha autorizada na data).</p><svg id="c3"></svg></div>
+    <div class="card"><h2>Taxa de devolução por fornecedor</h2><p>Unidades devolvidas ÷ vendidas, por trimestre.</p><div class="legend" id="lg4"></div><svg id="c4"></svg></div>
+  </div>
+  <div class="card"><h2>Margem por categoria</h2><p>Participação na receita e margem bruta no período e loja selecionados, comparadas ao ano anterior.</p><div style="overflow-x:auto"><table id="t1"></table></div></div>
+  <footer>Margem bruta = receita líquida − custo dos produtos (itens sem custo cadastrado ficam fora da margem). Projeto de portfólio de Leticia Cerqueira · código em github.com/leticiacerqueira/analise-vendas-varejo</footer>
+</div>
+<div class="tip" id="tip"></div>
+<script>
+const D=/*__DADOS__*/null;
+const $=s=>document.querySelector(s), NS="http://www.w3.org/2000/svg";
+const st={p:"2026",l:-1};
+const brl=v=>v>=1e6?"R$ "+(v/1e6).toLocaleString("pt-BR",{maximumFractionDigits:2})+" mi":v>=1e3?"R$ "+(v/1e3).toLocaleString("pt-BR",{maximumFractionDigits:0})+" mil":"R$ "+v.toLocaleString("pt-BR",{maximumFractionDigits:0});
+const pct=(v,d=1)=>(v*100).toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d})+"%";
+const MES=["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+const lbl=m=>MES[+m.slice(5)-1]+"/"+m.slice(2,4);
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const tip=$("#tip");
+function tt(el,html){el.addEventListener("pointermove",e=>{tip.innerHTML=html;tip.style.opacity=1;
+  const x=Math.min(e.clientX+12,innerWidth-tip.offsetWidth-8);tip.style.left=x+"px";tip.style.top=(e.clientY+14)+"px"});
+  el.addEventListener("pointerleave",()=>tip.style.opacity=0)}
+function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p&&p.appendChild(e);return e}
+function txt(p,x,y,s,a={}){const t=el("text",Object.assign({x,y},a),p);t.textContent=s;return t}
+
+// períodos: índice de meses incluídos e período de comparação (mesmos meses do ano anterior)
+function mesesDe(p){return D.meses.map((m,i)=>[m,i]).filter(([m])=>p==="all"||m.startsWith(p)).map(x=>x[1])}
+function anterior(p){if(p==="all"||p==="2024")return null;const a=String(+p-1),fim=p==="2026"?"10":"12";
+  return D.meses.map((m,i)=>[m,i]).filter(([m])=>m.startsWith(a)&&m.slice(5)<=fim).map(x=>x[1])}
+function soma(ms,l){const S=new Set(ms);const r={rec:0,rc:0,mg:0,br:0,dx:0,ped:0,un:0,dv:0,est:0};
+  for(const a of D.agg)if(S.has(a[0])&&(l<0||a[1]===l)){r.rec+=a[3];r.rc+=a[4];r.mg+=a[5];r.br+=a[6];r.dx+=a[7]}
+  for(const a of D.ped)if(S.has(a[0])&&(l<0||a[1]===l))r.ped+=a[2];
+  for(const a of D.forn)if(S.has(a[0])&&(l<0||a[1]===l)){r.un+=a[3];r.dv+=a[4];r.est+=a[6]}
+  return r}
+
+function kpis(){const ms=mesesDe(st.p),pv=anterior(st.p),a=soma(ms,st.l),b=pv?soma(pv,st.l):null;
+  const k=[
+    ["Receita líquida",brl(a.rec),b?var_(a.rec/b.rec-1,"%",true):""],
+    ["Margem bruta",pct(a.mg/a.rc),b?var_(a.mg/a.rc-b.mg/b.rc,"pp",true):""],
+    ["Ticket médio",brl(a.rec/a.ped).replace(" mil",""),b?var_((a.rec/a.ped)/(b.rec/b.ped)-1,"%",true):""],
+    ["Desconto acima da política",brl(a.dx),b?`<small class="${a.dx>b.dx*1.5+1?"bad":""}">antes: ${brl(b.dx)}</small>`:""],
+    ["Taxa de devolução",pct(a.dv/a.un),b?var_(a.dv/a.un-b.dv/b.un,"pp",false):""]];
+  $("#kpis").innerHTML=k.map(([t,v,s])=>`<div class="kpi"><span>${t}</span><b>${v}</b>${s||"<small>&nbsp;</small>"}</div>`).join("")}
+function var_(d,u,maior){const bom=maior?d>=0:d<=0;const s=(d>=0?"+":"−")+(u==="pp"?(Math.abs(d)*100).toLocaleString("pt-BR",{maximumFractionDigits:1})+" p.p.":(Math.abs(d)*100).toLocaleString("pt-BR",{maximumFractionDigits:1})+"%");
+  return `<small class="${bom?"ok":"bad"}">${s} vs. mesmo período do ano anterior</small>`}
+
+function c1(){const s=$("#c1");s.innerHTML="";const W=560,H=250,ml=46,mr=40,mt=10,mb=24;s.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  const n=D.meses.length,sel=new Set(mesesDe(st.p));const v=D.meses.map((m,i)=>soma([i],st.l));
+  const mx=Math.max(...v.map(x=>x.rec))*1.1,bw=(W-ml-mr)/n;const y=r=>mt+(H-mt-mb)*(1-r/mx);
+  const mg=v.map(x=>x.mg/x.rc),lo=Math.floor(Math.min(...mg)*50)/50-.02,hi=Math.ceil(Math.max(...mg)*50)/50+.01;const y2=r=>mt+(H-mt-mb)*(1-(r-lo)/(hi-lo));
+  const g=el("g",{class:"axis"},s);
+  for(let k=0;k<=4;k++){const val=mx*k/4;el("line",{x1:ml,x2:W-mr,y1:y(val),y2:y(val)},g);txt(s,ml-6,y(val)+4,brl(val).replace("R$ ",""),{"text-anchor":"end"})}
+  for(let k=0;k<=3;k++){const val=lo+(hi-lo)*k/3;txt(s,W-mr+6,y2(val)+4,pct(val,0))}
+  v.forEach((x,i)=>{const r=el("rect",{x:ml+i*bw+1,y:y(x.rec),width:bw-2,height:H-mb-y(x.rec),rx:1.5,fill:sel.has(i)?css("--bar"):css("--grid")},s);
+    tt(r,`<b>${lbl(D.meses[i])}</b><br>Receita: ${brl(x.rec)}<br>Margem: ${pct(mg[i])}`);
+    if(D.meses[i].endsWith("-01"))txt(s,ml+i*bw,H-6,D.meses[i].slice(0,4))});
+  el("path",{d:mg.map((m,i)=>(i?"L":"M")+(ml+i*bw+bw/2)+","+y2(m)).join(""),fill:"none",stroke:css("--accent"),"stroke-width":2},s);
+  mg.forEach((m,i)=>{if(sel.has(i)){const c=el("circle",{cx:ml+i*bw+bw/2,cy:y2(m),r:2.6,fill:css("--accent")},s);tt(c,`<b>${lbl(D.meses[i])}</b><br>Margem: ${pct(m)}`)}})}
+
+function c2(){const s=$("#c2");s.innerHTML="";const ms=mesesDe(st.p);
+  const v=D.lojas.map(([c,n],i)=>{const r=soma(ms,i);return{i,n,m:r.mg/r.rc,rec:r.rec,dx:r.dx}}).sort((a,b)=>a.m-b.m);
+  const tot=soma(ms,-1),med=tot.mg/tot.rc;const W=560,rh=26,ml=120,H=v.length*rh+20;s.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  const lo=Math.min(.25,Math.min(...v.map(x=>x.m))-.03),hi=Math.max(...v.map(x=>x.m))+.02;const x=m=>ml+(W-ml-50)*(m-lo)/(hi-lo);
+  v.forEach((d,k)=>{const yy=k*rh+4,bad=d.m<med-.03,on=st.l<0||st.l===d.i;
+    const r=el("rect",{x:ml,y:yy,width:Math.max(2,x(d.m)-ml),height:rh-8,rx:2,fill:bad?css("--accent"):css("--bar"),opacity:on?1:.35,style:"cursor:pointer"},s);
+    txt(s,ml-8,yy+rh/2+0,d.n,{"text-anchor":"end"});txt(s,x(d.m)+6,yy+rh/2,pct(d.m),{style:"fill:var(--fg)"});
+    tt(r,`<b>${d.n}</b><br>Margem: ${pct(d.m)}<br>Receita: ${brl(d.rec)}<br>Desconto acima da política: ${brl(d.dx)}`);
+    r.addEventListener("click",()=>{st.l=st.l===d.i?-1:d.i;$("#loja").value=st.l;draw()})});
+  const xm=x(med);el("line",{x1:xm,x2:xm,y1:0,y2:H-14,stroke:css("--fg"),"stroke-dasharray":"3 3","stroke-width":1},s);txt(s,xm,H-2,"média "+pct(med),{"text-anchor":"middle"})}
+
+function c3(){const s=$("#c3");s.innerHTML="";const W=560,H=200,ml=46,mt=10,mb=24;s.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  const sel=new Set(mesesDe(st.p)),v=D.meses.map((m,i)=>soma([i],st.l).dx),mx=Math.max(1000,...v)*1.15,bw=(W-ml-10)/v.length,y=r=>mt+(H-mt-mb)*(1-r/mx);
+  const g=el("g",{class:"axis"},s);for(let k=0;k<=3;k++){const val=mx*k/3;el("line",{x1:ml,x2:W-10,y1:y(val),y2:y(val)},g);txt(s,ml-6,y(val)+4,brl(val).replace("R$ ",""),{"text-anchor":"end"})}
+  v.forEach((d,i)=>{const r=el("rect",{x:ml+i*bw+1,y:y(d),width:bw-2,height:H-mb-y(d),rx:1.5,fill:sel.has(i)?css("--accent"):css("--grid")},s);
+    tt(r,`<b>${lbl(D.meses[i])}</b><br>Desconto acima da política: ${brl(d)}`);if(D.meses[i].endsWith("-01"))txt(s,ml+i*bw,H-6,D.meses[i].slice(0,4))})}
+
+function c4(){const s=$("#c4");s.innerHTML="";const W=560,H=210,ml=40,mr=10,mt=10,mb=24;s.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  const tri=[...new Set(D.meses.map(m=>m.slice(0,4)+"-T"+Math.ceil(+m.slice(5)/3)))];const ti=m=>tri.indexOf(m.slice(0,4)+"-T"+Math.ceil(+m.slice(5)/3));
+  const S=D.forns.map(()=>tri.map(()=>[0,0]));for(const a of D.forn)if(st.l<0||a[1]===st.l){const t=ti(D.meses[a[0]]);S[a[2]][t][0]+=a[3];S[a[2]][t][1]+=a[4]}
+  const R=S.map(f=>f.map(([u,d])=>u?d/u:0));const mx=Math.max(.04,...R.flat())*1.1;const x=i=>ml+(W-ml-mr)*i/(tri.length-1),y=r=>mt+(H-mt-mb)*(1-r/mx);
+  const g=el("g",{class:"axis"},s);for(let k=0;k<=4;k++){const val=mx*k/4;el("line",{x1:ml,x2:W-mr,y1:y(val),y2:y(val)},g);txt(s,ml-6,y(val)+4,pct(val,0),{"text-anchor":"end"})}
+  tri.forEach((t,i)=>{if(t.endsWith("T1"))txt(s,x(i),H-6,t.slice(0,4),{"text-anchor":"middle"})});
+  const top=R.map((r,i)=>[Math.max(...r.slice(-3)),i]).sort((a,b)=>b[0]-a[0])[0][1];
+  R.forEach((r,i)=>{const hot=i===top;const p=el("path",{d:r.map((v,k)=>(k?"L":"M")+x(k)+","+y(v)).join(""),fill:"none",stroke:hot?css("--accent"):css("--bar"),"stroke-width":hot?2.4:1.2,opacity:hot?1:.8},s);
+    if(hot)p.parentNode.appendChild(p);
+    r.forEach((v,k)=>{const c=el("circle",{cx:x(k),cy:y(v),r:hot?3:5,fill:hot?css("--accent"):"transparent"},s);tt(c,`<b>${D.forns[i]}</b> · ${tri[k]}<br>Devolução: ${pct(v)} (${S[i][k][1]} de ${S[i][k][0]} un.)`)})});
+  $("#lg4").innerHTML=`<span><i style="background:var(--accent)"></i>${D.forns[top]}</span><span><i style="background:var(--bar)"></i>demais fornecedores (passe o mouse)</span>`}
+
+function t1(){const ms=mesesDe(st.p),pv=anterior(st.p),f=(m)=>{const S=new Set(m),r=D.cats.map(()=>({rec:0,rc:0,mg:0}));
+  for(const a of D.agg)if(S.has(a[0])&&(st.l<0||a[1]===st.l)){r[a[2]].rec+=a[3];r[a[2]].rc+=a[4];r[a[2]].mg+=a[5]}return r};
+  const a=f(ms),b=pv?f(pv):null,ta=a.reduce((s,x)=>s+x.rec,0),tb=b?b.reduce((s,x)=>s+x.rec,0):1;
+  const rows=D.cats.map((c,i)=>({c,p:a[i].rec/ta,m:a[i].mg/a[i].rc,pb:b?b[i].rec/tb:null,mb:b?b[i].mg/b[i].rc:null})).sort((x,y)=>y.p-x.p);
+  const d=(v)=>v==null?"":`<span style="color:${v<-.01?"var(--accent)":"var(--muted)"}">${v>=0?"+":"−"}${(Math.abs(v)*100).toLocaleString("pt-BR",{maximumFractionDigits:1})} p.p.</span>`;
+  $("#t1").innerHTML=`<tr><th>Categoria</th><th>Participação</th><th>vs. ano ant.</th><th>Margem bruta</th><th>vs. ano ant.</th></tr>`+
+   rows.map(r=>`<tr><td>${r.c}</td><td><span class="barcell" style="width:${Math.round(r.p*120)}px"></span>${pct(r.p)}</td><td>${b?d(r.p-r.pb):"–"}</td><td>${pct(r.m)}</td><td>${b?d(r.m-r.mb):"–"}</td></tr>`).join("")}
+
+function draw(){kpis();c1();c2();c3();c4();t1()}
+$("#loja").innerHTML=`<option value="-1">Todas as lojas</option>`+D.lojas.map(([c,n],i)=>`<option value="${i}">${n}</option>`).join("");
+$("#loja").addEventListener("change",e=>{st.l=+e.target.value;draw()});
+document.querySelectorAll("#per button").forEach(b=>b.addEventListener("click",()=>{st.p=b.dataset.p;
+  document.querySelectorAll("#per button").forEach(x=>x.setAttribute("aria-pressed",x===b));draw()}));
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",draw);
+draw();
+</script>

@@ -1,0 +1,39 @@
+table dim_meta
+	lineageTag: 4cec8fb1-6d5b-5303-b3a8-60059bc7edaf
+
+	column loja
+		dataType: string
+		summarizeBy: none
+		lineageTag: 921a0f47-7286-5171-8cd2-394f8781a899
+		sourceColumn: loja
+
+	column mes
+		dataType: string
+		summarizeBy: none
+		lineageTag: a31a91f9-5560-5c33-a3b5-1e0382ea7ac7
+		sourceColumn: mes
+
+	column meta_receita
+		dataType: double
+		summarizeBy: sum
+		lineageTag: 43ab2b5b-3a7f-5d7e-b24e-370f0a6d17fe
+		sourceColumn: meta_receita
+
+	column data
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		summarizeBy: none
+		lineageTag: 0cafb3d4-8fd8-5cf0-91cb-bf42695ed17e
+		sourceColumn: data
+
+
+	partition dim_meta = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(Web.Contents("https://raw.githubusercontent.com/leticiacerqueira/analise-vendas-varejo/main/saida/powerbi/dim_meta.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars = true]),
+				    Tipos = Table.TransformColumnTypes(Cabecalhos, {{"loja", type text}, {"mes", type text}, {"meta_receita", type number}, {"data", type date}}, "en-US")
+				in
+				    Tipos
+

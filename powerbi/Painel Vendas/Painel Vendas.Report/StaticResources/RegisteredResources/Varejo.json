@@ -1,0 +1,41 @@
+{
+  "name": "Varejo",
+  "dataColors": [
+    "#C2560F",
+    "#7A4A2A",
+    "#D9B48A",
+    "#4A2E1E",
+    "#E9A36B",
+    "#8C6A55",
+    "#B5651D",
+    "#5C4033"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#2B1D14",
+  "tableAccent": "#C2560F",
+  "good": "#1D7F47",
+  "bad": "#C93A3A",
+  "neutral": "#8A94A6",
+  "textClasses": {
+    "callout": {
+      "fontSize": 22,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#2B1D14"
+    },
+    "title": {
+      "fontSize": 11,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#2B1D14"
+    },
+    "header": {
+      "fontSize": 11,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#2B1D14"
+    },
+    "label": {
+      "fontSize": 9,
+      "fontFace": "Segoe UI",
+      "color": "#6E5A4B"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+table fato_devolucoes
+	lineageTag: 2e91984c-ba26-57d3-a385-53268c313d50
+
+	column devolucao_id
+		dataType: string
+		summarizeBy: none
+		lineageTag: 406b7c06-f0db-5934-b292-96d8597d4409
+		sourceColumn: devolucao_id
+
+	column pedido_id
+		dataType: int64
+		summarizeBy: none
+		lineageTag: 69d18a37-f2a2-5503-bf00-0c18e8fe55e0
+		sourceColumn: pedido_id
+
+	column sku
+		dataType: string
+		summarizeBy: none
+		lineageTag: 6de80615-e3fe-538f-9ab1-cec956f88d04
+		sourceColumn: sku
+
+	column loja
+		dataType: string
+		summarizeBy: none
+		lineageTag: 81516422-76f4-575b-90d9-5c2f49dc0fe9
+		sourceColumn: loja
+
+	column data
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		summarizeBy: none
+		lineageTag: 5cd99d9f-833c-53de-8e08-ab315fdba4bb
+		sourceColumn: data
+
+	column quantidade
+		dataType: int64
+		summarizeBy: sum
+		lineageTag: b6a6cbaa-a10b-51f7-8e3c-bc0baf5f01a1
+		sourceColumn: quantidade
+
+	column valor_estornado
+		dataType: double
+		summarizeBy: sum
+		lineageTag: 097facc4-cdac-5d5f-b90f-6afec094696e
+		sourceColumn: valor_estornado
+
+	column motivo
+		dataType: string
+		summarizeBy: none
+		lineageTag: 63b4940d-e5da-5394-bfca-ef61c14c2e6b
+		sourceColumn: motivo
+
+
+	measure 'Unidades Devolvidas' = SUM ( fato_devolucoes[quantidade] )
+		formatString: #,0
+		lineageTag: 2c642d74-310b-517b-9bdc-b913d658e62d
+
+	measure 'Taxa de Devolução %' = DIVIDE ( [Unidades Devolvidas], [Unidades Vendidas] )
+		formatString: 0.0%
+		lineageTag: 329c83e9-884a-5218-b3c8-f4c73d230d80
+
+	measure 'Valor Estornado' = SUM ( fato_devolucoes[valor_estornado] )
+		formatString: \R\$ #,0
+		lineageTag: 9b26b730-5bab-54bc-9e93-ccbc8e71dd18
+
+	measure 'Devoluções por Defeito' = CALCULATE ( [Unidades Devolvidas], fato_devolucoes[motivo] = "Defeito" )
+		formatString: #,0
+		lineageTag: 75a31136-d1d5-5324-bbf4-bd608b70a0bd
+
+	partition fato_devolucoes = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(Web.Contents("https://raw.githubusercontent.com/leticiacerqueira/analise-vendas-varejo/main/saida/powerbi/fato_devolucoes.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars = true]),
+				    Tipos = Table.TransformColumnTypes(Cabecalhos, {{"devolucao_id", type text}, {"pedido_id", Int64.Type}, {"sku", type text}, {"loja", type text}, {"data", type date}, {"quantidade", Int64.Type}, {"valor_estornado", type number}, {"motivo", type text}}, "en-US")
+				in
+				    Tipos
+

@@ -1,0 +1,149 @@
+table fato_vendas
+	lineageTag: 8cf202be-77fb-55e1-8e9b-25f52212759f
+
+	column pedido_id
+		dataType: int64
+		summarizeBy: none
+		lineageTag: d8ad6a9b-7786-5783-b12f-38c430c844e5
+		sourceColumn: pedido_id
+
+	column data
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		summarizeBy: none
+		lineageTag: 55407c81-8089-59b8-9284-12fa5c3dad62
+		sourceColumn: data
+
+	column loja
+		dataType: string
+		summarizeBy: none
+		lineageTag: 583a2dc8-32a0-5074-a146-1bdb4ad54ade
+		sourceColumn: loja
+
+	column sku
+		dataType: string
+		summarizeBy: none
+		lineageTag: 9d641756-9568-54c8-8244-01346009aca3
+		sourceColumn: sku
+
+	column quantidade
+		dataType: int64
+		summarizeBy: sum
+		lineageTag: 49e68dc6-346d-5757-9296-b6ee2e9af59f
+		sourceColumn: quantidade
+
+	column preco_unit
+		dataType: double
+		summarizeBy: none
+		lineageTag: c59bc17b-dd7f-5387-b3db-a14671b769f1
+		sourceColumn: preco_unit
+
+	column desconto_pct
+		dataType: double
+		summarizeBy: none
+		lineageTag: d808ad35-6579-52a1-a78a-2a85fe32f693
+		sourceColumn: desconto_pct
+
+	column valor_liquido
+		dataType: double
+		summarizeBy: sum
+		lineageTag: 474808b3-7be0-5c4a-ad94-bc200ff6ebed
+		sourceColumn: valor_liquido
+
+	column item_valido
+		dataType: int64
+		summarizeBy: none
+		lineageTag: 1aab504e-827d-58e8-b929-893d8550f491
+		sourceColumn: item_valido
+
+	column custo
+		dataType: double
+		summarizeBy: sum
+		lineageTag: b2e37530-f558-58c4-b396-276473e9a08c
+		sourceColumn: custo
+
+	column margem
+		dataType: double
+		summarizeBy: sum
+		lineageTag: 9fe0e16e-55b6-5459-9afc-ec7803d2a97f
+		sourceColumn: margem
+
+	column tem_custo
+		dataType: int64
+		summarizeBy: none
+		lineageTag: adc35aca-8dd4-51a4-8b71-7a80af14e338
+		sourceColumn: tem_custo
+
+	column desconto_excedente
+		dataType: double
+		summarizeBy: sum
+		lineageTag: f24b4bb4-9a20-5702-a731-47474e00eccf
+		sourceColumn: desconto_excedente
+
+
+	measure Receita = CALCULATE ( SUM ( fato_vendas[valor_liquido] ), fato_vendas[item_valido] = 1 )
+		formatString: \R\$ #,0
+		lineageTag: dab19f1f-0cfb-5123-828b-206b2f71d207
+
+	measure 'Receita com Custo' = CALCULATE ( [Receita], fato_vendas[tem_custo] = 1 )
+		formatString: \R\$ #,0
+		lineageTag: 36dce744-e0b7-5e3c-9fd8-f81bbf9b2e03
+
+	measure 'Margem Bruta' = CALCULATE ( SUM ( fato_vendas[margem] ), fato_vendas[item_valido] = 1, fato_vendas[tem_custo] = 1 )
+		formatString: \R\$ #,0
+		lineageTag: 79528142-eb35-5468-8e22-45131bc3e5b9
+
+	measure 'Margem %' = DIVIDE ( [Margem Bruta], [Receita com Custo] )
+		formatString: 0.0%
+		lineageTag: fe5546e5-7a18-51e3-8c1e-dc1b0faf7a0c
+
+	measure 'Margem % Ano Anterior' = CALCULATE ( [Margem %], SAMEPERIODLASTYEAR ( dCalendario[Data] ) )
+		formatString: 0.0%
+		lineageTag: 4fa12402-eba8-5fb4-b62e-90af2c5a03a0
+
+	measure 'Variação da Margem (p.p.)' = IF ( NOT ISBLANK ( [Margem % Ano Anterior] ), ( [Margem %] - [Margem % Ano Anterior] ) * 100 )
+		formatString: +0.0;-0.0
+		lineageTag: 97923b80-90ca-538e-a390-625f138c3ac1
+
+	measure 'Receita Ano Anterior' = CALCULATE ( [Receita], SAMEPERIODLASTYEAR ( dCalendario[Data] ) )
+		formatString: \R\$ #,0
+		lineageTag: 6d35ff91-2377-5638-aa42-55c5ef884734
+
+	measure 'Variação da Receita %' = DIVIDE ( [Receita] - [Receita Ano Anterior], [Receita Ano Anterior] )
+		formatString: +0.0%;-0.0%
+		lineageTag: 83e570cc-a837-5c34-809d-baf163e51a97
+
+	measure Pedidos = CALCULATE ( DISTINCTCOUNT ( fato_vendas[pedido_id] ), fato_vendas[item_valido] = 1 )
+		formatString: #,0
+		lineageTag: 7caca879-21a8-5106-9a0b-0457a9666d72
+
+	measure 'Ticket Médio' = DIVIDE ( [Receita], [Pedidos] )
+		formatString: \R\$ #,0
+		lineageTag: fb6a77f1-f4c7-5cd3-ba16-bd9e590aac27
+
+	measure 'Desconto Acima da Política' = SUM ( fato_vendas[desconto_excedente] )
+		formatString: \R\$ #,0
+		lineageTag: daf84ab5-9b84-5652-862f-73301ddc4a00
+
+	measure 'Unidades Vendidas' = CALCULATE ( SUM ( fato_vendas[quantidade] ), fato_vendas[item_valido] = 1 )
+		formatString: #,0
+		lineageTag: 525cc406-5451-593a-ad2b-b7a467f53f7f
+
+	measure Meta = SUM ( dim_meta[meta_receita] )
+		formatString: \R\$ #,0
+		lineageTag: dc6ee3e6-7e59-536c-abaa-65f92bc05367
+
+	measure '% da Meta' = DIVIDE ( [Receita], [Meta] )
+		formatString: 0.0%
+		lineageTag: a0c81c25-dad3-5ff3-b496-1eaa1a46245e
+
+	partition fato_vendas = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(Web.Contents("https://raw.githubusercontent.com/leticiacerqueira/analise-vendas-varejo/main/saida/powerbi/fato_vendas.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars = true]),
+				    Tipos = Table.TransformColumnTypes(Cabecalhos, {{"pedido_id", Int64.Type}, {"data", type date}, {"loja", type text}, {"sku", type text}, {"quantidade", Int64.Type}, {"preco_unit", type number}, {"desconto_pct", type number}, {"valor_liquido", type number}, {"item_valido", Int64.Type}, {"custo", type number}, {"margem", type number}, {"tem_custo", Int64.Type}, {"desconto_excedente", type number}}, "en-US")
+				in
+				    Tipos
+

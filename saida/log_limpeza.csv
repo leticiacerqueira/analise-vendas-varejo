@@ -1,0 +1,11 @@
+problema,linhas,acao
+Linhas no arquivo de vendas,159130,lidas
+Itens duplicados (integração do e-commerce reenviou o pedido),601,removidos
+Código de loja fora do padrão (L4),140,corrigido para L04
+"Data no futuro (ano 2052, digitação de 2025)",2,corrigido para 2025
+Quantidade negativa (estorno lançado como venda),23,removidos da tabela de vendas
+Preço zero no item,41,marcado (fora das análises de receita)
+Produtos com categoria fora do padrão (11 grafias para 6 categorias),15,padronizado
+Produtos sem custo cadastrado,6,marcado (fora do cálculo de margem)
+Itens vendidos desses produtos,3895,"receita mantida, margem não calculada"
+Linhas na base final de vendas,158506,carregadas no SQLite

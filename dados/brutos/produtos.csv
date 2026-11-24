@@ -1,0 +1,241 @@
+sku,produto,categoria,fornecedor,preco_tabela,custo_unit
+P0001,Jogo de lençol A1,"Cama, mesa e banho",Têxtil Serrana,382.9,161.73
+P0002,Toalha de banho A2,"Cama, mesa e banho",Fios do Vale,52.9,23.55
+P0003,Edredom A3,"Cama, mesa e banho",Têxtil Serrana,152.9,67.53
+P0004,Toalha de mesa A4,CAMA MESA E BANHO ,Fios do Vale,257.9,119.55
+P0005,Travesseiro A5,"Cama, mesa e banho",Têxtil Serrana,226.9,107.32
+P0006,Cobre-leito A6,"Cama, mesa e banho",Fios do Vale,340.9,149.59
+P0007,Jogo de lençol B7,"Cama, mesa e banho",Têxtil Serrana,40.9,17.36
+P0008,Toalha de banho B1,"Cama, mesa e banho",Fios do Vale,93.9,42.66
+P0009,Edredom B2,"Cama, mesa e banho",Têxtil Serrana,284.9,126.49
+P0010,Toalha de mesa B3,"Cama, mesa e banho",Fios do Vale,105.9,47.67
+P0011,Travesseiro B4,"Cama, mesa e banho",Têxtil Serrana,116.9,54.66
+P0012,Cobre-leito B5,"Cama, mesa e banho",Fios do Vale,310.9,154.25
+P0013,Jogo de lençol C6,"Cama, mesa e banho",Têxtil Serrana,176.9,90.58
+P0014,Toalha de banho C7,"Cama, mesa e banho",Fios do Vale,184.9,84.19
+P0015,Edredom C1,"Cama, mesa e banho",Têxtil Serrana,229.9,117.45
+P0016,Toalha de mesa C2,"Cama, mesa e banho",Fios do Vale,76.9,38.48
+P0017,Travesseiro C3,"Cama, mesa e banho",Têxtil Serrana,139.9,71.72
+P0018,Cobre-leito C4,"Cama, mesa e banho",Fios do Vale,227.9,119.65
+P0019,Jogo de lençol D5,"Cama, mesa e banho",Têxtil Serrana,117.9,56.98
+P0020,Toalha de banho D6,"Cama, mesa e banho",Fios do Vale,65.9,32.18
+P0021,Edredom D7,cama mesa banho,Têxtil Serrana,285.9,149.74
+P0022,Toalha de mesa D1,CAMA MESA E BANHO ,Fios do Vale,48.9,20.47
+P0023,Travesseiro D2,"Cama, mesa e banho",Têxtil Serrana,225.9,97.35
+P0024,Cobre-leito D3,"Cama, mesa e banho",Fios do Vale,177.9,94.71
+P0025,Jogo de lençol E4,CAMA MESA E BANHO ,Têxtil Serrana,199.9,103.35
+P0026,Toalha de banho E5,"Cama, mesa e banho",Fios do Vale,47.9,23.63
+P0027,Edredom E6,"Cama, mesa e banho",Têxtil Serrana,300.9,140.06
+P0028,Toalha de mesa E7,"Cama, mesa e banho",Fios do Vale,135.9,64.69
+P0029,Travesseiro E1,"Cama, mesa e banho",Têxtil Serrana,202.9,95.64
+P0030,Cobre-leito E2,cama mesa banho,Fios do Vale,375.9,177.85
+P0031,Jogo de lençol F3,"Cama, mesa e banho",Têxtil Serrana,49.9,
+P0032,Toalha de banho F4,"Cama, mesa e banho",Fios do Vale,233.9,111.76
+P0033,Edredom F5,"Cama, mesa e banho",Têxtil Serrana,102.9,46.18
+P0034,Toalha de mesa F6,"Cama, mesa e banho",Fios do Vale,408.9,203.47
+P0035,Travesseiro F7,"Cama, mesa e banho",Têxtil Serrana,53.9,23.31
+P0036,Cobre-leito F1,"Cama, mesa e banho",Fios do Vale,254.9,122.82
+P0037,Jogo de lençol G2,cama mesa banho,Têxtil Serrana,405.9,228.26
+P0038,Toalha de banho G3,"Cama, mesa e banho",Fios do Vale,63.9,33.13
+P0039,Edredom G4,"Cama, mesa e banho",Têxtil Serrana,160.9,74.19
+P0040,Toalha de mesa G5,"Cama, mesa e banho",Fios do Vale,241.9,130.16
+P0041,Travesseiro G6,"Cama, mesa e banho",Têxtil Serrana,46.9,25.73
+P0042,Cobre-leito G7,"Cama, mesa e banho",Fios do Vale,205.9,92.05
+P0043,Jogo de lençol H1,"Cama, mesa e banho",Têxtil Serrana,159.9,
+P0044,Toalha de banho H2,"Cama, mesa e banho",Fios do Vale,220.9,109.57
+P0045,Edredom H3,"Cama, mesa e banho",Têxtil Serrana,45.9,21.64
+P0046,Panela inox A1,Cozinha,Inox Paulista,117.9,59.97
+P0047,Jogo de facas A2,Cozinha,Casa Forte Utilidades,89.9,55.77
+P0048,Frigideira A3,Cozinha,Inox Paulista,21.9,11.66
+P0049,Assadeira A4,Cozinha,Casa Forte Utilidades,240.9,
+P0050,Jogo de copos A5,Cozinha,Inox Paulista,148.9,75.97
+P0051,Aparelho de jantar A6,Cozinha,Casa Forte Utilidades,54.9,27.27
+P0052,Panela inox B7,Cozinha,Inox Paulista,45.9,25.1
+P0053,Jogo de facas B1,Cozinha,Casa Forte Utilidades,73.9,42.16
+P0054,Frigideira B2,Cozinha,Inox Paulista,50.9,29.79
+P0055,Assadeira B3,Cozinha,Casa Forte Utilidades,24.9,12.42
+P0056,Jogo de copos B4,Cozinha,Inox Paulista,22.9,12.19
+P0057,Aparelho de jantar B5,Cozinha,Casa Forte Utilidades,236.9,122.75
+P0058,Panela inox C6,Cozinha,Inox Paulista,23.9,12.76
+P0059,Jogo de facas C7,Cozinha,Casa Forte Utilidades,33.9,17.66
+P0060,Frigideira C1,Cozinha,Inox Paulista,23.9,13.97
+P0061,Assadeira C2,Cozinha,Casa Forte Utilidades,155.9,84.83
+P0062,Jogo de copos C3,Cozinha,Inox Paulista,184.9,106.1
+P0063,Aparelho de jantar C4,Cozinha,Casa Forte Utilidades,159.9,86.12
+P0064,Panela inox D5,Cozinha,Inox Paulista,275.9,161.16
+P0065,Jogo de facas D6,Cozinha,Casa Forte Utilidades,133.9,73.09
+P0066,Frigideira D7,Cozinha,Inox Paulista,45.9,26.82
+P0067,Assadeira D1,Cozinha,Casa Forte Utilidades,135.9,75.02
+P0068,Jogo de copos D2,Cozinha,Inox Paulista,183.9,98.32
+P0069,Aparelho de jantar D3,Cozinha,Casa Forte Utilidades,59.9,31.61
+P0070,Panela inox E4,Cozinha,Inox Paulista,100.9,52.88
+P0071,Jogo de facas E5,Cozinha,Casa Forte Utilidades,64.9,33.13
+P0072,Frigideira E6,Cozinha,Inox Paulista,30.9,18.16
+P0073,Assadeira E7,Cozinha,Casa Forte Utilidades,33.9,17.39
+P0074,Jogo de copos E1,Cozinha,Inox Paulista,134.9,78.37
+P0075,Aparelho de jantar E2,Cozinha,Casa Forte Utilidades,189.9,97.59
+P0076,Panela inox F3,Cozinha,Inox Paulista,174.9,96.35
+P0077,Jogo de facas F4,Cozinha,Casa Forte Utilidades,43.9,22.2
+P0078,Frigideira F5,Cozinha,Inox Paulista,119.9,58.22
+P0079,Assadeira F6,Cozinha,Casa Forte Utilidades,289.9,145.58
+P0080,Jogo de copos F7,Cozinha,Inox Paulista,27.9,16.12
+P0081,Aparelho de jantar F1,Cozinha,Casa Forte Utilidades,251.9,125.91
+P0082,Panela inox G2,Cozinha,Inox Paulista,61.9,35.27
+P0083,Jogo de facas G3,Cozinha,Casa Forte Utilidades,199.9,107.91
+P0084,Frigideira G4,Cozinha,Inox Paulista,46.9,25.17
+P0085,Assadeira G5,Cozinha,Casa Forte Utilidades,20.9,10.45
+P0086,Jogo de copos G6,Cozinha,Inox Paulista,25.9,15.95
+P0087,Aparelho de jantar G7,Cozinha,Casa Forte Utilidades,155.9,82.83
+P0088,Panela inox H1,Cozinha,Inox Paulista,32.9,16.18
+P0089,Jogo de facas H2,Cozinha,Casa Forte Utilidades,188.9,102.33
+P0090,Frigideira H3,Cozinha,Inox Paulista,25.9,15.43
+P0091,Assadeira H4,Cozinha,Casa Forte Utilidades,34.9,21.25
+P0092,Jogo de copos H5,Cozinha,Inox Paulista,55.9,30.0
+P0093,Aparelho de jantar H6,Cozinha,Casa Forte Utilidades,147.9,73.36
+P0094,Panela inox I7,Cozinha,Inox Paulista,98.9,58.99
+P0095,Jogo de facas I1,Cozinha,Casa Forte Utilidades,283.9,159.53
+P0096,Fritadeira elétrica A1,Eletroportáteis,Quentinha Eletro,562.9,380.37
+P0097,Liquidificador A2,Eletroportáteis,Volt Brasil,458.9,329.87
+P0098,Cafeteira A3,Eletroportáteis,Quentinha Eletro,769.9,501.49
+P0099,Batedeira A4,Eletroportáteis,EletroSul,140.9,104.66
+P0100,Sanduicheira A5,Eletroportáteis,Volt Brasil,476.9,358.91
+P0101,Aspirador portátil A6,Eletroportáteis,Quentinha Eletro,269.9,184.22
+P0102,Fritadeira elétrica B7,Eletroportáteis,Quentinha Eletro,274.9,195.1
+P0103,Liquidificador B1,Eletroportáteis,Volt Brasil,179.9,128.57
+P0104,Cafeteira B2,Eletroportáteis,Quentinha Eletro,405.9,293.06
+P0105,Batedeira B3,Eletroportáteis,EletroSul,707.9,495.73
+P0106,Sanduicheira B4,Eletroportateis,Volt Brasil,172.9,123.79
+P0107,Aspirador portátil B5,ELETROPORTÁTEIS,Quentinha Eletro,230.9,148.82
+P0108,Fritadeira elétrica C6,Eletroportáteis,Quentinha Eletro,135.9,98.59
+P0109,Liquidificador C7,ELETROPORTÁTEIS,Volt Brasil,237.9,182.57
+P0110,Cafeteira C1,Eletroportáteis,Quentinha Eletro,577.9,369.94
+P0111,Batedeira C2,Eletroportáteis,EletroSul,772.9,545.98
+P0112,Sanduicheira C3,Eletroportáteis,Volt Brasil,487.9,351.76
+P0113,Aspirador portátil C4,Eletroportáteis,Quentinha Eletro,167.9,122.03
+P0114,Fritadeira elétrica D5,Eletroportáteis,Quentinha Eletro,852.9,567.43
+P0115,Liquidificador D6,Eletroportáteis,Volt Brasil,138.9,90.82
+P0116,Cafeteira D7,Eletroportáteis,Quentinha Eletro,300.9,209.8
+P0117,Batedeira D1,Eletroportateis,EletroSul,273.9,181.75
+P0118,Sanduicheira D2,Eletroportáteis,Volt Brasil,225.9,160.86
+P0119,Aspirador portátil D3,ELETROPORTÁTEIS,Quentinha Eletro,691.9,522.55
+P0120,Fritadeira elétrica E4,Eletroportáteis,Quentinha Eletro,611.9,418.67
+P0121,Liquidificador E5,Eletroportáteis,Volt Brasil,152.9,116.17
+P0122,Cafeteira E6,Eletroportáteis,Quentinha Eletro,509.9,344.26
+P0123,Batedeira E7,Eletroportáteis,EletroSul,121.9,82.66
+P0124,Sanduicheira E1,Eletroportáteis,Volt Brasil,551.9,352.57
+P0125,Aspirador portátil E2,Eletroportateis,Quentinha Eletro,764.9,568.65
+P0126,Fritadeira elétrica F3,Eletroportáteis,Quentinha Eletro,678.9,452.54
+P0127,Liquidificador F4,Eletroportáteis,Volt Brasil,697.9,462.56
+P0128,Cafeteira F5,Eletroportáteis,Quentinha Eletro,156.9,114.05
+P0129,Batedeira F6,Eletroportáteis,EletroSul,316.9,219.28
+P0130,Sanduicheira F7,Eletroportáteis,Volt Brasil,636.9,412.23
+P0131,Aspirador portátil F1,Eletroportáteis,Quentinha Eletro,557.9,415.44
+P0132,Fritadeira elétrica G2,Eletroportáteis,Quentinha Eletro,380.9,238.57
+P0133,Liquidificador G3,Eletroportáteis,Volt Brasil,120.9,88.12
+P0134,Cafeteira G4,Eletroportáteis,Quentinha Eletro,275.9,191.38
+P0135,Batedeira G5,Eletroportáteis,EletroSul,372.9,278.71
+P0136,Vaso decorativo A1,Decoração,Arte & Lar,220.9,81.49
+P0137,Quadro A2,Decoração,Vime Nordeste,31.9,14.66
+P0138,Almofada A3,Decoração,Arte & Lar,153.9,66.02
+P0139,Espelho A4,Decoração,Vime Nordeste,186.9,85.78
+P0140,Luminária A5,Decoração,Arte & Lar,58.9,26.5
+P0141,Cesto de vime A6,Decoração,Vime Nordeste,291.9,127.05
+P0142,Vaso decorativo B7,Decoração,Arte & Lar,35.9,17.27
+P0143,Quadro B1,Decoração,Vime Nordeste,151.9,59.42
+P0144,Almofada B2,Decoração,Arte & Lar,33.9,14.38
+P0145,Espelho B3,Decoração,Vime Nordeste,120.9,54.54
+P0146,Luminária B4,Decoração,Arte & Lar,46.9,22.04
+P0147,Cesto de vime B5,Decoração,Vime Nordeste,33.9,14.3
+P0148,Vaso decorativo C6,Decoração,Arte & Lar,121.9,54.28
+P0149,Quadro C7,Decoração,Vime Nordeste,151.9,61.96
+P0150,Almofada C1,Decoração,Arte & Lar,31.9,12.2
+P0151,Espelho C2,Decoracao,Vime Nordeste,218.9,94.68
+P0152,Luminária C3,Decoração,Arte & Lar,39.9,19.52
+P0153,Cesto de vime C4,Decoração,Vime Nordeste,356.9,160.5
+P0154,Vaso decorativo D5,Decoração,Arte & Lar,85.9,31.87
+P0155,Quadro D6,Decoração,Vime Nordeste,48.9,21.32
+P0156,Almofada D7,Decoração,Arte & Lar,100.9,43.85
+P0157,Espelho D1,Decoração,Vime Nordeste,79.9,31.56
+P0158,Luminária D2,Decoracao,Arte & Lar,71.9,30.02
+P0159,Cesto de vime D3,Decoração,Vime Nordeste,35.9,15.15
+P0160,Vaso decorativo E4,Decoração,Arte & Lar,211.9,85.28
+P0161,Quadro E5,Decoração,Vime Nordeste,159.9,64.92
+P0162,Almofada E6,Decoração,Arte & Lar,147.9,50.63
+P0163,Espelho E7,Decoração,Vime Nordeste,291.9,125.57
+P0164,Luminária E1,Decoração,Arte & Lar,31.9,14.89
+P0165,Cesto de vime E2,Decoração,Vime Nordeste,284.9,121.5
+P0166,Vaso decorativo F3,Decoração,Arte & Lar,40.9,15.2
+P0167,Quadro F4,Decoração,Vime Nordeste,130.9,63.26
+P0168,Almofada F5,Decoração,Arte & Lar,115.9,51.98
+P0169,Espelho F6,Decoração,Vime Nordeste,64.9,27.07
+P0170,Luminária F7,Decoracao,Arte & Lar,42.9,17.2
+P0171,Cesto de vime F1,Decoração,Vime Nordeste,66.9,28.21
+P0172,Vaso decorativo G2,Decoração,Arte & Lar,73.9,36.38
+P0173,Quadro G3,Decoração,Vime Nordeste,45.9,
+P0174,Almofada G4,Decoração,Arte & Lar,100.9,42.5
+P0175,Espelho G5,Decoração,Vime Nordeste,79.9,40.05
+P0176,Caixa organizadora A1,Organização,Plastik Rio,61.9,32.36
+P0177,Cabide A2,Organização,Casa Forte Utilidades,91.9,45.91
+P0178,Organizador de gaveta A3,Organização,Plastik Rio,40.9,22.64
+P0179,Prateleira A4,Organização,Casa Forte Utilidades,22.9,12.31
+P0180,Cesto de roupa A5,Organização,Plastik Rio,34.9,17.01
+P0181,Caixa organizadora B6,Organização,Casa Forte Utilidades,30.9,16.33
+P0182,Cabide B7,Organização,Plastik Rio,42.9,16.79
+P0183,Organizador de gaveta B1,Organização,Casa Forte Utilidades,157.9,77.23
+P0184,Prateleira B2,Organização,Plastik Rio,27.9,15.23
+P0185,Cesto de roupa B3,Organização,Casa Forte Utilidades,18.9,8.62
+P0186,Caixa organizadora C4,Organização,Plastik Rio,124.9,54.37
+P0187,Cabide C5,Organização,Casa Forte Utilidades,89.9,47.6
+P0188,Organizador de gaveta C6,Organização,Plastik Rio,94.9,45.64
+P0189,Prateleira C7,Organização,Casa Forte Utilidades,18.9,8.26
+P0190,Cesto de roupa C1,Organização,Plastik Rio,19.9,9.21
+P0191,Caixa organizadora D2,Organização,Casa Forte Utilidades,45.9,22.11
+P0192,Cabide D3,Organização,Plastik Rio,131.9,65.87
+P0193,Organizador de gaveta D4,Organização,Casa Forte Utilidades,119.9,60.62
+P0194,Prateleira D5,Organização,Plastik Rio,75.9,35.15
+P0195,Cesto de roupa D6,Organização,Casa Forte Utilidades,95.9,48.72
+P0196,Caixa organizadora E7,Organização,Plastik Rio,108.9,56.0
+P0197,Cabide E1,Organização,Casa Forte Utilidades,44.9,
+P0198,Organizador de gaveta E2,Organização,Plastik Rio,148.9,75.38
+P0199,Prateleira E3,Organização,Casa Forte Utilidades,32.9,15.49
+P0200,Cesto de roupa E4,Organização,Plastik Rio,94.9,51.21
+P0201,Caixa organizadora F5,Organização,Casa Forte Utilidades,44.9,22.94
+P0202,Cabide F6,Organização,Plastik Rio,49.9,25.79
+P0203,Organizador de gaveta F7,Organização,Casa Forte Utilidades,34.9,17.76
+P0204,Prateleira F1,Organização,Plastik Rio,121.9,58.44
+P0205,Cesto de roupa F2,Organização,Casa Forte Utilidades,35.9,16.68
+P0206,Caixa organizadora G3,Organização,Plastik Rio,77.9,34.43
+P0207,Cabide G4,Organização,Casa Forte Utilidades,142.9,70.32
+P0208,Organizador de gaveta G5,Organização,Plastik Rio,32.9,17.12
+P0209,Prateleira G6,Organização,Casa Forte Utilidades,59.9,29.59
+P0210,Cesto de roupa G7,Organização,Plastik Rio,15.9,8.09
+P0211,Pano de prato A1,Utilidades,Plastik Rio,20.9,11.71
+P0212,Escorredor A2,Utilidades,Inox Paulista,62.9,37.36
+P0213,Pote hermético A3,Utilidades,Plastik Rio,70.9,40.19
+P0214,Lixeira A4,Utilidades,Inox Paulista,9.9,4.23
+P0215,Rodo A5,Utilidades,Plastik Rio,85.9,53.72
+P0216,Balde A6,Utilidades,Inox Paulista,11.9,6.57
+P0217,Pano de prato B7,Utilidades,Plastik Rio,25.9,14.32
+P0218,Escorredor B1,Utilidades,Inox Paulista,20.9,10.02
+P0219,Pote hermético B2,Utilidades,Plastik Rio,118.9,62.58
+P0220,Lixeira B3,Utilidades,Inox Paulista,39.9,22.98
+P0221,Rodo B4,Utilidades,Plastik Rio,11.9,6.79
+P0222,Balde B5,Utilidades,Inox Paulista,15.9,8.04
+P0223,Pano de prato C6,Utilidades,Plastik Rio,49.9,28.88
+P0224,Escorredor C7,Utilidades,Inox Paulista,19.9,11.36
+P0225,Pote hermético C1,Utilidades,Plastik Rio,12.9,7.09
+P0226,Lixeira C2,Utilidades,Inox Paulista,95.9,48.0
+P0227,Rodo C3,Utilidades,Plastik Rio,49.9,31.53
+P0228,Balde C4,Utilidades,Inox Paulista,36.9,19.85
+P0229,Pano de prato D5,Utilidades,Plastik Rio,58.9,31.68
+P0230,Escorredor D6,Utilidades,Inox Paulista,49.9,29.92
+P0231,Pote hermético D7,Utilidades,Plastik Rio,21.9,12.59
+P0232,Lixeira D1,Utilidades,Inox Paulista,29.9,16.43
+P0233,Rodo D2,Utilidades,Plastik Rio,46.9,25.37
+P0234,Balde D3,Utilidades,Inox Paulista,103.9,
+P0235,Pano de prato E4,Utilidades,Plastik Rio,17.9,10.97
+P0236,Escorredor E5,Utilidades,Inox Paulista,37.9,20.36
+P0237,Pote hermético E6,Utilidades,Plastik Rio,12.9,7.69
+P0238,Lixeira E7,Utilidades,Inox Paulista,8.9,4.67
+P0239,Rodo E1,Utilidades,Plastik Rio,18.9,9.98
+P0240,Balde E2,Utilidades,Inox Paulista,38.9,21.31

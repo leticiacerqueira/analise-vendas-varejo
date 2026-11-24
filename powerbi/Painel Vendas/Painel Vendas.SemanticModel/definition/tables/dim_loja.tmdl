@@ -1,0 +1,38 @@
+table dim_loja
+	lineageTag: 7b12f0b3-1d93-597d-92cb-c375d0dfa596
+
+	column loja
+		dataType: string
+		summarizeBy: none
+		lineageTag: ab899b9f-fa7b-504f-bfe9-787e898dfe71
+		sourceColumn: loja
+
+	column nome
+		dataType: string
+		summarizeBy: none
+		lineageTag: 4e301639-da8a-5fe9-89e9-eed43ee460cf
+		sourceColumn: nome
+
+	column cidade
+		dataType: string
+		summarizeBy: none
+		lineageTag: 19caa5be-3ae1-5246-bc41-147cba964f68
+		sourceColumn: cidade
+
+	column canal
+		dataType: string
+		summarizeBy: none
+		lineageTag: 56f9d53b-e3e6-5525-a23e-0cb6b0b56daa
+		sourceColumn: canal
+
+
+	partition dim_loja = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(Web.Contents("https://raw.githubusercontent.com/leticiacerqueira/analise-vendas-varejo/main/saida/powerbi/dim_loja.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars = true]),
+				    Tipos = Table.TransformColumnTypes(Cabecalhos, {{"loja", type text}, {"nome", type text}, {"cidade", type text}, {"canal", type text}}, "en-US")
+				in
+				    Tipos
+

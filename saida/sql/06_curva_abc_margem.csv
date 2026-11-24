@@ -1,0 +1,235 @@
+posicao,sku,produto,categoria,margem,pct_acumulado,classe
+1,P0114,Fritadeira elétrica D5,Eletroportáteis,68349.76,0.0194,A
+2,P0098,Cafeteira A3,Eletroportáteis,64456.26,0.0378,A
+3,P0127,Liquidificador F4,Eletroportáteis,56426.75,0.0538,A
+4,P0130,Sanduicheira F7,Eletroportáteis,53774.8,0.0691,A
+5,P0126,Fritadeira elétrica F3,Eletroportáteis,53522.58,0.0843,A
+6,P0105,Batedeira B3,Eletroportáteis,51793.29,0.0991,A
+7,P0110,Cafeteira C1,Eletroportáteis,51320.14,0.1137,A
+8,P0001,Jogo de lençol A1,"Cama, mesa e banho",50788.29,0.1281,A
+9,P0111,Batedeira C2,Eletroportáteis,50622.17,0.1425,A
+10,P0030,Cobre-leito E2,"Cama, mesa e banho",48567.32,0.1563,A
+11,P0124,Sanduicheira E1,Eletroportáteis,48346.07,0.1701,A
+12,P0096,Fritadeira elétrica A1,Eletroportáteis,45743.59,0.1831,A
+13,P0120,Fritadeira elétrica E4,Eletroportáteis,45500.07,0.196,A
+14,P0034,Toalha de mesa F6,"Cama, mesa e banho",44319.29,0.2087,A
+15,P0153,Cesto de vime C4,Decoração,43523.46,0.221,A
+16,P0006,Cobre-leito A6,"Cama, mesa e banho",43189.74,0.2333,A
+17,P0125,Aspirador portátil E2,Eletroportáteis,40838.51,0.2449,A
+18,P0132,Fritadeira elétrica G2,Eletroportáteis,37959.81,0.2557,A
+19,P0122,Cafeteira E6,Eletroportáteis,37901.1,0.2665,A
+20,P0027,Edredom E6,"Cama, mesa e banho",37065.31,0.2771,A
+21,P0012,Cobre-leito B5,"Cama, mesa e banho",37011.69,0.2876,A
+22,P0037,Jogo de lençol G2,"Cama, mesa e banho",36522.73,0.298,A
+23,P0141,Cesto de vime A6,Decoração,35228.88,0.308,A
+24,P0119,Aspirador portátil D3,Eletroportáteis,34772.07,0.3179,A
+25,P0163,Espelho E7,Decoração,34522.98,0.3277,A
+26,P0004,Toalha de mesa A4,"Cama, mesa e banho",34383.99,0.3375,A
+27,P0009,Edredom B2,"Cama, mesa e banho",33783.52,0.3471,A
+28,P0131,Aspirador portátil F1,Eletroportáteis,33316.94,0.3566,A
+29,P0165,Cesto de vime E2,Decoração,31901.51,0.3657,A
+30,P0036,Cobre-leito F1,"Cama, mesa e banho",30621.43,0.3744,A
+31,P0032,Toalha de banho F4,"Cama, mesa e banho",29662.03,0.3828,A
+32,P0079,Assadeira F6,Cozinha,28729.44,0.391,A
+33,P0097,Liquidificador A2,Eletroportáteis,28208.85,0.399,A
+34,P0112,Sanduicheira C3,Eletroportáteis,28083.15,0.407,A
+35,P0136,Vaso decorativo A1,Decoração,27977.02,0.4149,A
+36,P0018,Cobre-leito C4,"Cama, mesa e banho",27445.3,0.4228,A
+37,P0021,Edredom D7,"Cama, mesa e banho",27444.31,0.4306,A
+38,P0160,Vaso decorativo E4,Decoração,25916.41,0.4379,A
+39,P0023,Travesseiro D2,"Cama, mesa e banho",25771.77,0.4453,A
+40,P0040,Toalha de mesa G5,"Cama, mesa e banho",25417.4,0.4525,A
+41,P0104,Cafeteira B2,Eletroportáteis,25277.77,0.4597,A
+42,P0042,Cobre-leito G7,"Cama, mesa e banho",25222.89,0.4669,A
+43,P0029,Travesseiro E1,"Cama, mesa e banho",25107.48,0.474,A
+44,P0014,Toalha de banho C7,"Cama, mesa e banho",25010.58,0.4811,A
+45,P0005,Travesseiro A5,"Cama, mesa e banho",24616.1,0.4881,A
+46,P0081,Aparelho de jantar F1,Cozinha,24515.65,0.4951,A
+47,P0129,Batedeira F6,Eletroportáteis,24150.14,0.502,A
+48,P0015,Edredom C1,"Cama, mesa e banho",23745.19,0.5087,A
+49,P0100,Sanduicheira A5,Eletroportáteis,23573.9,0.5154,A
+50,P0095,Jogo de facas I1,Cozinha,23213.1,0.522,A
+51,P0151,Espelho C2,Decoração,23121.35,0.5286,A
+52,P0057,Aparelho de jantar B5,Cozinha,22725.26,0.5351,A
+53,P0044,Toalha de banho H2,"Cama, mesa e banho",22424.62,0.5414,A
+54,P0162,Almofada E6,Decoração,22334.65,0.5478,A
+55,P0135,Batedeira G5,Eletroportáteis,22174.91,0.5541,A
+56,P0116,Cafeteira D7,Eletroportáteis,21717.73,0.5603,A
+57,P0039,Edredom G4,"Cama, mesa e banho",21241.81,0.5663,A
+58,P0064,Panela inox D5,Cozinha,21145.93,0.5723,A
+59,P0025,Jogo de lençol E4,"Cama, mesa e banho",21043.65,0.5783,A
+60,P0117,Batedeira D1,Eletroportáteis,20918.91,0.5843,A
+61,P0219,Pote hermético B2,Utilidades,20182.31,0.59,A
+62,P0139,Espelho A4,Decoração,20115.51,0.5957,A
+63,P0134,Cafeteira G4,Eletroportáteis,19517.18,0.6013,A
+64,P0003,Edredom A3,"Cama, mesa e banho",19405.08,0.6068,A
+65,P0107,Aspirador portátil B5,Eletroportáteis,19104.06,0.6122,A
+66,P0101,Aspirador portátil A6,Eletroportáteis,18860.7,0.6176,A
+67,P0143,Quadro B1,Decoração,18749.23,0.6229,A
+68,P0161,Quadro E5,Decoração,18613.22,0.6282,A
+69,P0149,Quadro C7,Decoração,18484.09,0.6335,A
+70,P0226,Lixeira C2,Utilidades,18330.17,0.6387,A
+71,P0068,Jogo de copos D2,Cozinha,18242.8,0.6439,A
+72,P0083,Jogo de facas G3,Cozinha,17870.68,0.649,A
+73,P0089,Jogo de facas H2,Cozinha,17696.92,0.654,A
+74,P0013,Jogo de lençol C6,"Cama, mesa e banho",17593.4,0.659,A
+75,P0102,Fritadeira elétrica B7,Eletroportáteis,17581.53,0.664,A
+76,P0075,Aparelho de jantar E2,Cozinha,17440.76,0.669,A
+77,P0183,Organizador de gaveta B1,Organização,17254.05,0.6739,A
+78,P0138,Almofada A3,Decoração,17249.59,0.6788,A
+79,P0017,Travesseiro C3,"Cama, mesa e banho",16929.29,0.6836,A
+80,P0062,Jogo de copos C3,Cozinha,16791.63,0.6884,A
+81,P0028,Toalha de mesa E7,"Cama, mesa e banho",16532.39,0.6931,A
+82,P0093,Aparelho de jantar H6,Cozinha,16351.53,0.6977,A
+83,P0024,Cobre-leito D3,"Cama, mesa e banho",16231.66,0.7024,A
+84,P0050,Jogo de copos A5,Cozinha,14908.66,0.7066,A
+85,P0011,Travesseiro B4,"Cama, mesa e banho",14891.96,0.7108,A
+86,P0019,Jogo de lençol D5,"Cama, mesa e banho",14501.73,0.715,A
+87,P0118,Sanduicheira D2,Eletroportáteis,14358.02,0.719,A
+88,P0207,Cabide G4,Organização,14348.72,0.7231,A
+89,P0193,Organizador de gaveta D4,Organização,14337.7,0.7272,A
+90,P0087,Aparelho de jantar G7,Cozinha,14238.8,0.7313,A
+91,P0198,Organizador de gaveta E2,Organização,13978.54,0.7352,A
+92,P0167,Quadro F4,Decoração,13926.13,0.7392,A
+93,P0076,Panela inox F3,Cozinha,13926.13,0.7432,A
+94,P0186,Caixa organizadora C4,Organização,13887.27,0.7471,A
+95,P0061,Assadeira C2,Cozinha,13617.38,0.751,A
+96,P0148,Vaso decorativo C6,Decoração,13560.83,0.7548,A
+97,P0192,Cabide D3,Organização,13452.64,0.7587,A
+98,P0063,Aparelho de jantar C4,Cozinha,13271.73,0.7624,A
+99,P0078,Frigideira F5,Cozinha,13212.3,0.7662,A
+100,P0168,Almofada F5,Decoração,13050.07,0.7699,A
+101,P0154,Vaso decorativo D5,Decoração,12711.47,0.7735,A
+102,P0010,Toalha de mesa B3,"Cama, mesa e banho",12697.12,0.7771,A
+103,P0145,Espelho B3,Decoração,12669.67,0.7807,A
+104,P0067,Assadeira D1,Cozinha,12562.47,0.7843,A
+105,P0156,Almofada D7,Decoração,12410.12,0.7878,A
+106,P0065,Jogo de facas D6,Cozinha,12255.84,0.7913,A
+107,P0033,Edredom F5,"Cama, mesa e banho",12253.2,0.7948,A
+108,P0115,Liquidificador D6,Eletroportáteis,12235.46,0.7983,A
+109,P0204,Prateleira F1,Organização,12215.51,0.8018,B
+110,P0196,Caixa organizadora E7,Organização,11924.25,0.8052,B
+111,P0213,Pote hermético A3,Utilidades,11811.91,0.8085,B
+112,P0046,Panela inox A1,Cozinha,11669.44,0.8118,B
+113,P0174,Almofada G4,Decoração,11121.07,0.815,B
+114,P0103,Liquidificador B1,Eletroportáteis,10996.15,0.8181,B
+115,P0215,Rodo A5,Utilidades,10995.14,0.8213,B
+116,P0109,Liquidificador C7,Eletroportáteis,10851.43,0.8243,B
+117,P0008,Toalha de banho B1,"Cama, mesa e banho",10533.17,0.8273,B
+118,P0106,Sanduicheira B4,Eletroportáteis,10526.35,0.8303,B
+119,P0070,Panela inox E4,Cozinha,10222.34,0.8332,B
+120,P0229,Pano de prato D5,Utilidades,9776.31,0.836,B
+121,P0212,Escorredor A2,Utilidades,9729.07,0.8388,B
+122,P0187,Cabide C5,Organização,9582.06,0.8415,B
+123,P0074,Jogo de copos E1,Cozinha,9573.66,0.8442,B
+124,P0188,Organizador de gaveta C6,Organização,9548.19,0.847,B
+125,P0123,Batedeira E7,Eletroportáteis,9530.91,0.8497,B
+126,P0195,Cesto de roupa D6,Organização,9124.37,0.8523,B
+127,P0113,Aspirador portátil C4,Eletroportáteis,9049.65,0.8548,B
+128,P0128,Cafeteira F5,Eletroportáteis,8870.8,0.8574,B
+129,P0175,Espelho G5,Decoração,8765.57,0.8599,B
+130,P0157,Espelho D1,Decoração,8760.77,0.8623,B
+131,P0223,Pano de prato C6,Utilidades,8497.92,0.8648,B
+132,P0194,Prateleira D5,Organização,8495.16,0.8672,B
+133,P0158,Luminária D2,Decoração,8379.17,0.8696,B
+134,P0177,Cabide A2,Organização,8375.17,0.8719,B
+135,P0108,Fritadeira elétrica C6,Eletroportáteis,8312.06,0.8743,B
+136,P0172,Vaso decorativo G2,Decoração,8183.11,0.8766,B
+137,P0094,Panela inox I7,Cozinha,8041.82,0.8789,B
+138,P0169,Espelho F6,Decoração,7838.14,0.8812,B
+139,P0233,Rodo D2,Utilidades,7768.75,0.8834,B
+140,P0121,Liquidificador E5,Eletroportáteis,7768.52,0.8856,B
+141,P0171,Cesto de vime F1,Decoração,7694.74,0.8878,B
+142,P0200,Cesto de roupa E4,Organização,7682.36,0.89,B
+143,P0002,Toalha de banho A2,"Cama, mesa e banho",7677.76,0.8921,B
+144,P0022,Toalha de mesa D1,"Cama, mesa e banho",7525.03,0.8943,B
+145,P0140,Luminária A5,Decoração,7485.74,0.8964,B
+146,P0099,Batedeira A4,Eletroportáteis,7365.93,0.8985,B
+147,P0206,Caixa organizadora G3,Organização,7335.43,0.9006,B
+148,P0227,Rodo C3,Utilidades,7313.74,0.9027,B
+149,P0133,Liquidificador G3,Eletroportáteis,7278.39,0.9047,B
+150,P0016,Toalha de mesa C2,"Cama, mesa e banho",7265.75,0.9068,B
+151,P0230,Escorredor D6,Utilidades,7236.73,0.9089,B
+152,P0020,Toalha de banho D6,"Cama, mesa e banho",7219.4,0.9109,B
+153,P0035,Travesseiro F7,"Cama, mesa e banho",7035.18,0.9129,B
+154,P0038,Toalha de banho G3,"Cama, mesa e banho",7028.67,0.9149,B
+155,P0240,Balde E2,Utilidades,6546.79,0.9168,B
+156,P0047,Jogo de facas A2,Cozinha,6380.0,0.9186,B
+157,P0228,Balde C4,Utilidades,6355.29,0.9204,B
+158,P0053,Jogo de facas B1,Cozinha,6345.27,0.9222,B
+159,P0209,Prateleira G6,Organização,6195.44,0.924,B
+160,P0236,Escorredor E5,Utilidades,6114.35,0.9257,B
+161,P0051,Aparelho de jantar A6,Cozinha,6038.76,0.9274,B
+162,P0220,Lixeira B3,Utilidades,5864.3,0.9291,B
+163,P0071,Jogo de facas E5,Cozinha,5703.38,0.9307,B
+164,P0155,Quadro D6,Decoração,5642.93,0.9323,B
+165,P0007,Jogo de lençol B7,"Cama, mesa e banho",5610.2,0.9339,B
+166,P0045,Edredom H3,"Cama, mesa e banho",5536.91,0.9355,B
+167,P0176,Caixa organizadora A1,Organização,5513.97,0.9371,B
+168,P0166,Vaso decorativo F3,Decoração,5320.3,0.9386,B
+169,P0026,Toalha de banho E5,"Cama, mesa e banho",5305.17,0.9401,B
+170,P0082,Panela inox G2,Cozinha,5269.76,0.9416,B
+171,P0069,Aparelho de jantar D3,Cozinha,5140.13,0.943,B
+172,P0232,Lixeira D1,Utilidades,5131.54,0.9445,B
+173,P0041,Travesseiro G6,"Cama, mesa e banho",5039.02,0.9459,B
+174,P0170,Luminária F7,Decoração,5028.02,0.9474,B
+175,P0077,Jogo de facas F4,Cozinha,4868.88,0.9488,B
+176,P0182,Cabide B7,Organização,4855.79,0.9501,C
+177,P0092,Jogo de copos H5,Cozinha,4791.55,0.9515,C
+178,P0191,Caixa organizadora D2,Organização,4757.72,0.9529,C
+179,P0202,Cabide F6,Organização,4644.97,0.9542,C
+180,P0146,Luminária B4,Decoração,4609.5,0.9555,C
+181,P0150,Almofada C1,Decoração,4445.67,0.9567,C
+182,P0152,Luminária C3,Decoração,4359.36,0.958,C
+183,P0180,Cesto de roupa A5,Organização,4195.42,0.9592,C
+184,P0054,Frigideira B2,Cozinha,4152.65,0.9604,C
+185,P0052,Panela inox B7,Cozinha,4094.32,0.9615,C
+186,P0159,Cesto de vime D3,Decoração,4018.15,0.9627,C
+187,P0147,Cesto de vime B5,Decoração,3978.56,0.9638,C
+188,P0201,Caixa organizadora F5,Organização,3922.82,0.9649,C
+189,P0059,Jogo de facas C7,Cozinha,3842.28,0.966,C
+190,P0084,Frigideira G4,Cozinha,3797.26,0.9671,C
+191,P0142,Vaso decorativo B7,Decoração,3754.22,0.9682,C
+192,P0218,Escorredor B1,Utilidades,3751.56,0.9692,C
+193,P0217,Pano de prato B7,Utilidades,3719.11,0.9703,C
+194,P0205,Cesto de roupa F2,Organização,3703.44,0.9713,C
+195,P0164,Luminária E1,Decoração,3609.99,0.9724,C
+196,P0073,Assadeira E7,Cozinha,3544.96,0.9734,C
+197,P0144,Almofada B2,Decoração,3520.24,0.9744,C
+198,P0208,Organizador de gaveta G5,Organização,3490.79,0.9754,C
+199,P0199,Prateleira E3,Organização,3487.21,0.9764,C
+200,P0211,Pano de prato A1,Utilidades,3305.27,0.9773,C
+201,P0231,Pote hermético D7,Utilidades,3231.03,0.9782,C
+202,P0178,Organizador de gaveta A3,Organização,3224.89,0.9791,C
+203,P0239,Rodo E1,Utilidades,3176.64,0.98,C
+204,P0066,Frigideira D7,Cozinha,3059.14,0.9809,C
+205,P0181,Caixa organizadora B6,Organização,3052.88,0.9818,C
+206,P0224,Escorredor C7,Utilidades,2900.35,0.9826,C
+207,P0203,Organizador de gaveta F7,Organização,2898.76,0.9834,C
+208,P0088,Panela inox H1,Cozinha,2881.28,0.9842,C
+209,P0235,Pano de prato E4,Utilidades,2785.94,0.985,C
+210,P0222,Balde B5,Utilidades,2778.4,0.9858,C
+211,P0055,Assadeira B3,Cozinha,2746.18,0.9866,C
+212,P0137,Quadro A2,Decoração,2685.71,0.9874,C
+213,P0072,Frigideira E6,Cozinha,2682.13,0.9881,C
+214,P0058,Panela inox C6,Cozinha,2338.66,0.9888,C
+215,P0184,Prateleira B2,Organização,2327.08,0.9895,C
+216,P0091,Assadeira H4,Cozinha,2326.33,0.9901,C
+217,P0080,Jogo de copos F7,Cozinha,2239.45,0.9908,C
+218,P0179,Prateleira A4,Organização,2210.16,0.9914,C
+219,P0090,Frigideira H3,Cozinha,2175.01,0.992,C
+220,P0190,Cesto de roupa C1,Organização,2167.85,0.9926,C
+221,P0056,Jogo de copos B4,Cozinha,2139.93,0.9932,C
+222,P0225,Pote hermético C1,Utilidades,2061.32,0.9938,C
+223,P0216,Balde A6,Utilidades,1993.18,0.9944,C
+224,P0048,Frigideira A3,Cozinha,1978.52,0.995,C
+225,P0185,Cesto de roupa B3,Organização,1973.02,0.9955,C
+226,P0189,Prateleira C7,Organização,1966.98,0.9961,C
+227,P0086,Jogo de copos G6,Cozinha,1862.91,0.9966,C
+228,P0085,Assadeira G5,Cozinha,1837.01,0.9971,C
+229,P0060,Frigideira C1,Cozinha,1808.24,0.9976,C
+230,P0237,Pote hermético E6,Utilidades,1790.08,0.9982,C
+231,P0214,Lixeira A4,Utilidades,1708.99,0.9986,C
+232,P0210,Cesto de roupa G7,Organização,1681.02,0.9991,C
+233,P0221,Rodo B4,Utilidades,1658.36,0.9996,C
+234,P0238,Lixeira E7,Utilidades,1453.36,1.0,C
